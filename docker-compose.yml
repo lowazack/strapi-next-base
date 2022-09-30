@@ -12,14 +12,12 @@ services:
     restart: unless-stopped
     environment:
       PGDATA: ./db-data/:/var/lib/postgresql/data/db-1
-    
-
   #turborepo
-  turbo:
+  app:
     container_name: strapi_nextjs_turbo
     build:
       context: .
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
       - "1337:1337"

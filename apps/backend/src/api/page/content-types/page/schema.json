@@ -21,6 +21,12 @@
     },
     "pageTitle": {
       "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.hero"
+      ]
     }
   }
 }

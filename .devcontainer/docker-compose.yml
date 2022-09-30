@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: strapi_nextjs_turbo
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
+        VARIANT: 16-bullseye
+    ports:
+      - "3000:3000"
+      - "1337:1337"
+    environment:
+      APP_ENV: development
+      STRAPI_VERSION: 4.0.2 
+    volumes:
+      - next_node_modules:/workspace/${COMPOSE_PROJECT_NAME}/apps/frontend/node_modules
+      - next_node_modules:/workspace/${COMPOSE_PROJECT_NAME}/apps/backend/node_modules
+      - node_modules:/workspace/${COMPOSE_PROJECT_NAME}/node_modules
+      - ..:/workspace/${COMPOSE_PROJECT_NAME}:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  db:
+    container_name: db
+    image: postgres
+    ports:
+      - "5432:5432"
+    env_file:
+        - ../apps/backend/.env #shared env file with strapi application 
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data
+    restart: unless-stopped
+    environment:
+      PGDATA: ./db-data/:/var/lib/postgresql/data/db-1
+
+networks:
+  turbo-network:
+    driver: bridge
+
+volumes:
+  db:
+  next_node_modules:
+  node_modules:

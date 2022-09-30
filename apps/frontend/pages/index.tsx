@@ -1,10 +1,15 @@
 import { useEffect } from "react";
-import { Button } from "ui";
 import { strapiGet } from "../lib/strapi";
 import Layout from "../components/Layout";
 import SiteHead from "../components/SiteHead";
 
-export default function Web({siteSettings}) {  
+export default function Web({siteSettings, page}) {  
+
+  useEffect(()=> {
+    console.log(page)
+    // console.log(siteSettings)
+  })
+
   return (
     <>
     <SiteHead
@@ -20,10 +25,12 @@ export default function Web({siteSettings}) {
 
 export async function getStaticProps(context) {
   let siteSettings = await strapiGet('/api/site-setting?populate=%2A');
+  let page = await strapiGet(`/api/pages/${siteSettings.data.attributes.homePage.data.id}?populate=%2A`);
 
   return {
     props: {
-      siteSettings: siteSettings.data.attributes
+      siteSettings: siteSettings.data.attributes,
+      page: page.data
     }, 
   }
 }
