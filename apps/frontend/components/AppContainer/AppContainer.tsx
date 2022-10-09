@@ -1,4 +1,5 @@
-import Provider from "jotai"
+import React from "react";
+import styles from "./AppContainer.module.scss";
 
 interface appContainerTypes {
     children: React.ReactNode;
@@ -6,9 +7,12 @@ interface appContainerTypes {
 
 export default function AppContainer({children}: appContainerTypes){
     return (
-        <div>
-        {children}
+        <>
+        <div className={styles.primaryBg}/>
+        <div className={styles.secondaryBg}/>
+        <div className={styles.appContainer}>
+            {children}
         </div>
-        
+        </>
     )
 }

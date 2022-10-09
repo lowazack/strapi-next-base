@@ -1,0 +1,35 @@
+@import "../../styles/vars";
+
+.primaryBg {
+    position: fixed;
+    width: 100%;
+    aspect-ratio: 1/1;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    background:radial-gradient(
+        circle,
+        rgba($color-primary, 0.15) 0%,
+        rgba($color-primary, 0) 70%);
+
+}
+
+.secondaryBg {
+    position: fixed;
+    width: 100%;
+    aspect-ratio: 1/1;
+    left: 0;
+    bottom: 0;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    background:radial-gradient(
+        circle,
+        rgba($color-secondary, 0.15) 0%,
+        rgba($color-secondary, 0) 70%);
+}
+
+.appContainer {
+    min-height: 100vh;
+    position: relative;
+}

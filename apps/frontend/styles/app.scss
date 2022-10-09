@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+@import "./vars.scss";
+
+
+body {
+    margin: 0;
+    font-family: $font-body;
+    background-color: $color-body;
+    color: $color-text;
+    * { box-sizing: border-box;}
+}
