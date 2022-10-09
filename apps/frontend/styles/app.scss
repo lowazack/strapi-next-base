@@ -8,5 +8,7 @@ body {
     font-family: $font-body;
     background-color: $color-body;
     color: $color-text;
-    * { box-sizing: border-box;}
+    * {
+        box-sizing: border-box;
+    }
 }
