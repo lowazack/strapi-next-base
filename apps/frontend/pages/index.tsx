@@ -2,14 +2,9 @@ import { useEffect } from "react";
 import { strapiGet } from "../lib/strapi";
 import Layout from "../components/Layout";
 import SiteHead from "../components/SiteHead";
+import BlockBuilder from "../components/BlockBuilder";
 
-export default function Web({siteSettings, page}) {  
-
-  useEffect(()=> {
-    console.log(page)
-    // console.log(siteSettings)
-  })
-
+export default function Web({siteSettings, page}) {
   return (
     <>
     <SiteHead
@@ -17,7 +12,7 @@ export default function Web({siteSettings, page}) {
     pageData={siteSettings.homePage.data.attributes}
     />
     <Layout>
-      <h1>Content</h1>
+      <BlockBuilder blocks={page.attributes.blocks}/>
     </Layout>
     </>
   );

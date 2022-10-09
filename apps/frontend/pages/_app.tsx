@@ -1,9 +1,7 @@
 import "../styles/globals.scss"
 
-export default function(){
-    return (
-        <div>
-            <h1>asdfsaf</h1>
-        </div>
-    )
+export default function MyApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
 }
+  
+  

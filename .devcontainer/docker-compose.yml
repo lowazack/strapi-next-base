@@ -14,6 +14,7 @@ services:
       - "1337:1337"
     environment:
       APP_ENV: development
+      STRAPI_URL: http://localhost:1337
       STRAPI_VERSION: 4.0.2 
     volumes:
       - next_node_modules:/workspace/${COMPOSE_PROJECT_NAME}/apps/frontend/node_modules

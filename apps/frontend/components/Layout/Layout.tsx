@@ -5,6 +5,7 @@ export default function Layout({children}){
         <AppContainer>
         <header>Header</header>
         {children}
+
         <footer>Footer</footer>
         </AppContainer>
     )
