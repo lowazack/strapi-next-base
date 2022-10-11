@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
 @import "./vars.scss";
 
@@ -8,6 +8,8 @@ body {
     font-family: $font-body;
     background-color: $color-body;
     color: $color-text;
+    font-weight: 100;
+    line-height: 1.5;
     * {
         box-sizing: border-box;
     }

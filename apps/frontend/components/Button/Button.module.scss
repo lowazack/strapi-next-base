@@ -1,0 +1,9 @@
+@import "../../styles/vars.scss";
+
+.button {
+    background-color: $color-primary;
+    padding:#{$base-space * 1.5}px $space-lg;
+    border-radius: 500px;
+    cursor: pointer;
+    font-weight: 400;
+}
