@@ -2,10 +2,11 @@
 
 .hero {
     width: calc(100% - $space-md);
-    margin: auto;
     max-width: $width-regular;
+    margin: auto;
     flex-direction: column;
     display: flex;
+    padding: #{$base-space * 10}px 0;
 
     @media screen and (min-width:800px) {
         min-height: calc(100vh - 200px);    

@@ -2,11 +2,61 @@
 
 .footer {
     background-color: $color-off-body;
-
+    border-radius: 0 100px 0 0;
+    border: {
+        top: 2px solid $color-primary;
+        right: 2px solid $color-primary;
+    } 
+    margin-top: #{$base-space * 10}px;
 }
 
 .content {
     width: calc(100% - $space-md);
     margin: auto;
     max-width: $width-regular;
+    padding: $space-lg 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+}
+
+.socials {
+    display: flex;
+    gap: $space-sm;
+    
+    a {
+        display: flex;
+        width: 35px;
+        height: 35px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid $color-primary;
+        transition: 500ms ease-in-out;
+        
+        svg {
+            object-fit: contain;
+            width: 60%;
+            height: 60%;
+            fill: $color-primary;
+            transition: 500ms ease-in-out;
+        };
+
+        &:hover {
+            background-color: $color-secondary;
+            border-color: $color-secondary;
+            
+            svg {
+                fill: $color-text
+            }
+        }
+    }
+}
+
