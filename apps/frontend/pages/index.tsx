@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { strapiGet } from "../lib/strapi";
 import Layout from "../components/Layout";
 import SiteHead from "../components/SiteHead";

@@ -1,26 +1,30 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "blogs",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Page",
-    "description": ""
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "pageName": {
-      "type": "string",
-      "required": true
+    "name": {
+      "type": "string"
     },
     "pageDescription": {
-      "type": "text"
+      "type": "string"
     },
     "pageTitle": {
       "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "unique": true,
+      "required": true
     },
     "blocks": {
       "type": "dynamiczone",
@@ -28,12 +32,6 @@
         "blocks.hero",
         "blocks.text"
       ]
-    },
-    "slug": {
-      "type": "string",
-      "required": true,
-      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-      "unique": true
     }
   }
 }
