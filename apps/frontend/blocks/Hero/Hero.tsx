@@ -4,10 +4,6 @@ import Button from "../../components/Button"
 
 
 export default function Hero({ data }) {
-
-    useEffect(() => {
-        console.log(data)
-    })
     return (
         <div className={styles.hero}>
             <div className={styles.textCont}>

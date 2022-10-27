@@ -1,16 +1,20 @@
-import { useEffect } from "react"
 import blockMap from "./blockmap"
+import Text from "../../blocks/Text";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 export default function BlockBuilder({ blocks }) {
 
     function GetBlock(block) {
-        return blockMap[block.__component].render({
-            data: block,
-        })
+        const Element =  blockMap[block.__component];
+
+        return (
+            <Element data={block}/>
+        )
+        
     }
 
     function getNextBlock(currentKey) {
-        console.log()
         if(blocks[currentKey + 1]){
             return blocks[currentKey + 1].__component
         }
@@ -19,7 +23,6 @@ export default function BlockBuilder({ blocks }) {
     }
 
     function getPrevBlock(currentKey) {
-        console.log()
         if(blocks[currentKey - 1]){
             return blocks[currentKey - 1].__component
         }

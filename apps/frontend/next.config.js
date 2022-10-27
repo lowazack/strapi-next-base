@@ -1,7 +1,8 @@
-const withTM = require("next-transpile-modules")(["ui"]);
-
-module.exports = withTM({
-  reactStrictMode: true, 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -9,4 +10,6 @@ module.exports = withTM({
     });
     return config;
   }
-});
+};
+
+module.exports = nextConfig;
