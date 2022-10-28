@@ -6,8 +6,14 @@ import Facebook from "../../svg/facebook.svg"
 import Instagram from "../../svg/instagram.svg"
 import Twitter from "../../svg/twitter.svg"
 import LinkedIn from "../../svg/linkedIn.svg"
+import { strapiGet } from "../../lib/strapi";
 
-export default function Footer(){
+
+
+export default async function Footer(){
+
+    const socials = (await strapiGet("/api/social")).data.attributes
+
     return (
         <>
         <div className={styles.footer}>
@@ -16,18 +22,29 @@ export default function Footer(){
                     <Logo className={styles.logo}/>
 
                     <div className={styles.socials}>
-                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-                            <Facebook />
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-                            <Instagram />
-                        </a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-                            <Twitter />
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-                            <LinkedIn />
-                        </a>
+                        {socials.facebook && (
+                            <a href={socials.facebook} target="_blank" rel="noreferrer">
+                                <Facebook />
+                            </a>
+                        )}
+                        
+                        {socials.instagram && (
+                            <a href={socials.instagram} target="_blank" rel="noreferrer">
+                                <Instagram />
+                            </a>
+                        )}
+
+                        {socials.twitter && (
+                            <a href={socials.twitter} target="_blank" rel="noreferrer">
+                                <Twitter />
+                            </a>
+                        )}
+
+                        {socials.instagram && (
+                            <a href={socials.linkedIn} target="_blank" rel="noreferrer">
+                                <LinkedIn />
+                            </a>
+                        )}
                     </div>
                 
                 </div>
