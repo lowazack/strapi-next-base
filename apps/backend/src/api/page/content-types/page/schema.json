@@ -26,7 +26,8 @@
       "type": "dynamiczone",
       "components": [
         "blocks.hero",
-        "blocks.text"
+        "blocks.text",
+        "blocks.blog-grid"
       ]
     },
     "slug": {
