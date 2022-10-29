@@ -2,7 +2,8 @@ import BlockBuilder from "../../components/BlockBuilder";
 import { strapiGet } from "../../lib/strapi";
 
 async function getPage(slug:string) {
-    const page = (await strapiGet(`/api/pages?filters[slug][$eq]=${slug}&populate=%2A`)).data[0];
+    const page = (await strapiGet(`/api/pages?filters[slug][$eq]=${slug}&populate=%2A`))
+    .data[0];
     
     return {page}
 }
