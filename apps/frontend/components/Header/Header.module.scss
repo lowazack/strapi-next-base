@@ -7,6 +7,8 @@
     position: relative;
     max-width: $width-regular;
     width: calc(100% - $space-md);
+    align-items: center;
+    justify-content: space-between;
     
     &::before {
         content: "";
@@ -23,5 +25,41 @@
             right: 2px solid #ffffff66;
             bottom: 2px solid #ffffff66;
         };   
+    }
+}
+
+.desktopNav {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: $space-md;
+    li {
+        a {
+            color: $color-text;
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: $color-text;
+            font-weight: 500;
+            display: block;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                top: calc(100% + 3px);
+                width: 0%;
+                transition: width 300ms ease-in-out;
+                height: 1px;
+                background-color: #ffffff66;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
