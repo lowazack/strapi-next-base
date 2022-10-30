@@ -1,0 +1,60 @@
+@import "../../styles/globals.scss";
+
+.imageText {
+    display: grid;
+    width: calc(100% - $space-md);
+    max-width: $width-regular;
+    margin: auto;
+    gap: $space-md;
+    
+
+    @include mq(700px, min) {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+}
+
+.image {
+    border-radius: $radius $radius-lg;
+    width: 100%;
+
+    @include mq(700px, min) {
+        grid-column: 1/7;
+    }
+    
+    @include mq(800px, min) {
+        grid-column: 1/6;
+    }
+}
+
+.textCont {
+    grid-row-start: 1;    
+
+    @include mq(700px, min) {
+        grid-column: 7/13;
+    }
+    @include mq(1000px, min) {
+        grid-column: 7/12;
+    }
+}
+
+[data-flip="true"] {
+    .image {
+        @include mq(700px, min) {
+            grid-column: 7/13;
+        }
+        
+        @include mq(800px, min) {
+            grid-column: 8/13;
+        }
+    }
+
+    .textCont {
+        @include mq(700px, min) {
+            grid-column: 1/7;
+        }
+        @include mq(1000px, min) {
+            grid-column: 2/7;
+        }
+    }
+}
