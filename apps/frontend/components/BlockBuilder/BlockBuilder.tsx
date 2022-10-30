@@ -1,17 +1,14 @@
-import blockMap from "./blockmap"
-import Text from "../../blocks/Text";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import blockMap from "./blockmap";
+import styles  from "./BlockBuilder.module.scss";
+
 
 export default function BlockBuilder({ blocks }) {
 
     function GetBlock(block) {
         const Element =  blockMap[block.__component];
-
         return (
             <Element data={block}/>
-        )
-        
+        )        
     }
 
     function getNextBlock(currentKey) {
@@ -40,6 +37,8 @@ export default function BlockBuilder({ blocks }) {
                     data-block-pos={key}
                     data-next-block={getNextBlock(key)}
                     data-prev-block={getPrevBlock(key)}
+                    className={styles.block}
+                    
                 >
                     {GetBlock(block)}
                 </div>

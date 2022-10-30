@@ -31,17 +31,20 @@
       "type": "dynamiczone",
       "components": [
         "blocks.hero",
-        "blocks.text"
+        "blocks.text",
+        "blocks.blog-grid",
+        "blocks.logo-grid"
       ]
     },
     "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

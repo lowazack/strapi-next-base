@@ -9,7 +9,6 @@
     padding: #{$base-space * 10}px 0;
 
     @media screen and (min-width:800px) {
-        min-height: calc(100vh - 200px);    
         grid-template-columns: repeat(12, 1fr);
         display: grid;
     }

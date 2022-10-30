@@ -3,7 +3,7 @@
 .button {
     background-color: $color-primary;
     padding:#{$base-space * 1.5}px $space-lg;
-    border-radius: 500px;
+    border-radius: $radius-lg $radius;
     cursor: pointer;
     font-weight: 400;
     border: 3px solid $color-primary;
@@ -11,5 +11,6 @@
 
     &:hover {
         background-color: transparent;
+        border-radius: $radius $radius-lg;
     }
 }

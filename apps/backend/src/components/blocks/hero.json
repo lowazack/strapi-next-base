@@ -2,22 +2,18 @@
   "collectionName": "components_blocks_heroes",
   "info": {
     "displayName": "Hero",
-    "icon": "window-maximize"
+    "icon": "window-maximize",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "backgroundImage": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "heading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

@@ -1,0 +1,64 @@
+@import "../../styles/globals.scss";
+
+.logoGrid {
+    width: calc(100% - $space-md);
+    max-width: $width-regular;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:$color-off-body;
+    border-radius:  $radius $radius-xl;
+    padding: $space-lg;
+    box-shadow:
+        0 0 84px 0px transparentize( $color-body, 0.95),
+        0 0 20px 0px transparentize( $color-body, 0.8);
+
+}
+
+.title {
+    margin: 0;
+    font-weight: 500;
+}
+
+.text {
+    max-width: 500px;
+    margin: {
+        top: 0;
+        bottom: $space-lg
+    };
+}
+
+.grid {
+    display: grid;
+    gap: $space-lg;
+    width: 100%;
+    grid-template-columns:  repeat(2, 1fr);
+
+    @include mq(600px, min){
+        grid-template-columns:  repeat(3, 1fr);
+    }
+
+    @include mq(800px, min){
+        grid-template-columns:  repeat(4, 1fr);
+    }
+
+    @include mq(1000px, min){
+        grid-template-columns:  repeat(6, 1fr);
+    }
+}
+
+.logoCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    object-position: center center;
+}
