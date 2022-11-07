@@ -16,12 +16,12 @@ async function getPage() {
     const siteSettings = await strapiGet('/api/site-setting?populate=%2A');
     const page = await strapiGet(`/api/pages/${siteSettings.data.attributes.homePage.data.id}?${query}`);
 
-    return {blocks: page.data.attributes.blocks}
+    return page.data.attributes.blocks
 }
 
 
 export default async function Page(){
-    const {blocks} = await getPage();
+    const blocks = await getPage();    
     return (
         <BlockBuilder blocks={blocks} />
     )

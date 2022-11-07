@@ -6,6 +6,7 @@ const blockMap =  {
     "blocks.blog-grid": dynamic(() => import("../../blocks/BlogGrid")),
     "blocks.logo-grid": dynamic(() => import("../../blocks/LogoGrid")),
     "blocks.image-text": dynamic(() => import("../../blocks/ImageText")),
+    "blocks.gallery": dynamic(() => import("../../blocks/Gallery")),
 }
 
 export default blockMap

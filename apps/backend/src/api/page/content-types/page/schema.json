@@ -29,7 +29,8 @@
         "blocks.text",
         "blocks.blog-grid",
         "blocks.logo-grid",
-        "blocks.image-text"
+        "blocks.image-text",
+        "blocks.gallery"
       ]
     },
     "slug": {
