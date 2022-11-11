@@ -1,0 +1,13 @@
+@import "../../styles/globals.scss";
+
+.gallery {
+    width: calc(100% - $space-md);
+    max-width: $width-regular;
+    margin: auto;
+}
+
+.slideImg {
+    display: block;
+    width: 100%;
+    pointer-events: none;
+}

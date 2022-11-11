@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3",
     "sass": "^1.55.0",
+    "swiper": "^8.4.4",
     "ui": "*"
   },
   "devDependencies": {
