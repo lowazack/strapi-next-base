@@ -15,7 +15,6 @@ export default async function BlogGrid(){
 
     const {articles} = await getArticles();
 
-    // console.log(articles)
 
     return (
         <div className={styles.grid}>

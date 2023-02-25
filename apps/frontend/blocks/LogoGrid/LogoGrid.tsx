@@ -4,6 +4,8 @@ import styles from "./LogoGrid.module.scss"
 export default function LogoGrid({data}) {
     const {title, text, logos} = data;
 
+    console.log(data);
+
     return (
         <div className={styles.logoGrid}>
             <h1 className={styles.title}>{title}</h1>

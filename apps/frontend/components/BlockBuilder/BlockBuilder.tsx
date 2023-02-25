@@ -6,7 +6,11 @@ export default function BlockBuilder({ blocks }) {
 
     function GetBlock(block) {
         const Element =  blockMap[block.__component];
+
+
+
         return (
+            // <div>asdfsadf</div>
             <Element data={block}/>
         )        
     }
@@ -16,7 +20,7 @@ export default function BlockBuilder({ blocks }) {
             return blocks[currentKey + 1].__component
         }
 
-        return "null";
+        return null;
     }
 
     function getPrevBlock(currentKey) {
@@ -24,7 +28,7 @@ export default function BlockBuilder({ blocks }) {
             return blocks[currentKey - 1].__component
         }
 
-        return "null";
+        return null;
     }
 
 
